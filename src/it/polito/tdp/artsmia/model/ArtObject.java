@@ -1,6 +1,6 @@
 package it.polito.tdp.artsmia.model;
 
-public class ArtObject {
+public class ArtObject implements Comparable<ArtObject> {
 
 	private int id;
 	private String classification;
@@ -196,4 +196,10 @@ public class ArtObject {
 	public String toString() {
 		return "ArtObject [objectId=" + id + ", title=" + title + "]";
 	}
+
+	@Override
+	public int compareTo(ArtObject a) {
+		return this.name.compareTo(a.name);
+	}
+	
 }
